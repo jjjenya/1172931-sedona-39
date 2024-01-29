@@ -1,6 +1,6 @@
 # Личный проект «Седона»
 
-* Студент: [Евгения](https://up.htmlacademy.ru/htmlcss/39/user/1172931).
+* Студент: [Евгения Сабирова](https://up.htmlacademy.ru/htmlcss/39/user/1172931).
 * Наставник: [Карина Королева](https://htmlacademy.ru/profile/id1526731).
 * Сайт: [Мой проект Седона](https://jjjenya.github.io/1172931-sedona-39/).
 ---
