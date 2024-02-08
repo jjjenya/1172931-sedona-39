@@ -108,23 +108,32 @@
           <div class="filter-price">
           </div>
 
-          <button class="catalog__button button-submit" type="submit">Применить</button>
+          <button class="catalog__button button-submit" type="button">Применить</button>
           <button class="catalog__button button-reset" type="reset">Сбросить</button>
         </form>
+        <p class="filter-result">Найдено гостиниц: <span>38</span></р>
         <select class="select-control" aria-label="Сортировка">
           <option value="popular">Сначала популярные</option>
           <option value="cheap">Сначала дешевые</option>
           <option value="expensive">Сначала дорогие</option>
         </select>
-        <a href="#" class="button button--active">
-          <span class="visually-hidden">Показать карточки мелко</span>
-        </a>
-        <a href="#" class="button button--light">
-          <span class="visually-hidden">Показать карточки крупно</span>
-        </a>
-        <a href="#" class="button button--light">
-          <span class="visually-hidden">Показать список</span>
-        </a>
+        <ul class="switch-buttons">
+          <li class="switch-buttons__item">
+            <button class="button switch--active" type="button">
+              <span class="visually-hidden">Показать карточки мелко</span>
+            </button>
+          </li>
+          <li class="switch-buttons__item">
+            <button class="button switch--active" type="button">
+              <span class="visually-hidden">Показать карточки крупно</span>
+            </button>
+          </li>
+          <li class="switch-buttons__item">
+            <button class="button switch--active" type="button">
+              <span class="visually-hidden">Показать список</span>
+            </button>
+          </li>
+        </ul>
         <ul class="products-cards">
           <li class="product-card__item">
             <a class="product-card__link" href="#">
@@ -228,37 +237,22 @@
         </ul>
         <ul class="pagination">
           <li class="pagination__item">
-            <a class="pagination__link pagination__link--current" href="#">
-              <span>1</span>
-            </a>
+            <a class="pagination__link pagination__link--current" href="#">1</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link" href="#">
-              <span>2</span>
-            </a>
+            <a class="pagination__link pagination__link--current" href="#">2</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link" href="#">
-              <span>2</span>
-            </a>
+            <a class="pagination__link pagination__link--current" href="#">3</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link" href="#">
-              <span>3</span>
-            </a>
-          </li>
-          <li class="pagination__item">
-            <a class="pagination__link" href="#">
-              <span>4</span>
-            </a>
+            <a class="pagination__link pagination__link--current" href="#">4</a>
           </li>
           <li class="pagination__item pagination__bridge">
             <span>...</span>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link" href="#">
-              <span>10</span>
-            </a>
+            <a class="pagination__link pagination__link--current" href="#">10</a>
           </li>
         </ul>
       </section>
