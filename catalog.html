@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Седона</title>
   </head>
+
   <body>
     <header class="main-header">
       <nav class="main-nav">
@@ -46,16 +48,18 @@
     <main class="main-index inner">
       <header class="inner__header">
         <h1 class="inner__title">Гостиницы Седоны</h1>
-        <ul class="breadcrumbs">
+        <ol class="breadcrumbs">
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="index.html">Главная</a>
+            <a class="breadcrumbs__link" href="index.html">
+              <span class="visually-hidden">На главную</span>
+            </a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" title="Текущая страница">Каталог</a>
+            <a class="breadcrumbs__link" title="Текущая страница">Гостиницы</a>
           </li>
-        </ul>
+        </ol>
       </header>
-      <section class="catalog catalog__products">
+      <section class="catalog">
         <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
         <form class="catalog__filter" action="https://echo.htmlacademy.ru/" method="get">
           <fieldset class="filter-group">
@@ -112,11 +116,11 @@
           <button class="catalog__button button-reset" type="reset">Сбросить</button>
         </form>
         <p class="filter-result">Найдено гостиниц: <span>38</span></р>
-        <select class="select-control" aria-label="Сортировка">
-          <option value="popular">Сначала популярные</option>
-          <option value="cheap">Сначала дешевые</option>
-          <option value="expensive">Сначала дорогие</option>
-        </select>
+          <select class="catalog__select" aria-label="Сортировка">
+            <option value="popular">Сначала популярные</option>
+            <option value="cheap">Сначала дешевые</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
         <ul class="switch-buttons">
           <li class="switch-buttons__item">
             <button class="button switch--active" type="button">
@@ -134,105 +138,71 @@
             </button>
           </li>
         </ul>
-        <ul class="products-cards">
-          <li class="product-card__item">
-            <a class="product-card__link" href="#">
-              <h3 class="product-card__title">Amara Resort & Spa</h3>
-              <img class="product-card__image" src="#" alt="image">
+        <ul class="catalog-cards card">
+          <li class="card__item">
+            <a class="card__link" href="#">
+              <h3 class="card__title">Amara Resort & Spa</h3>
+              <img class="card__image" src="#" alt="image">
             </a>
-            <span class="product-card__type">Гостиница</span>
-            <span class="product-card__price">От 4000</span>
-            <a class="product-card__details button" href="#">Подробнее</a>
-            <a class="product-card__like button">В избранное</a>
-            <div class="product-card__rating rating-star">
-              <ul class="rating-star__list">
-                <li class="rating-star__item">
-                  <img src="#" alt="1">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="2">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="3">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="4">
-                </li>
-              </ul>
-              <span class="product-card__caption">Рейтинг: 8,5</span>
+            <span class="card__type">Гостиница</span>
+            <span class="card__price">От 4000</span>
+            <a class="card__details button" href="#">Подробнее</a>
+            <a class="card__like button" href="#">В избранное</a>
+            <div class="card__rating">
+              <img src="#" alt="1">
+              <img src="#" alt="2">
+              <img src="#" alt="3">
+              <img src="#" alt="4">
             </div>
+            <span class="card__caption">Рейтинг: 8,5</span>
           </li>
-          <li class="product-card__item">
-            <a class="product-card__link" href="#">
-              <h3 class="product-card__title">Villas at Poco Diablo</h3>
-              <img class="product-card__image" src="#" alt="image">
+          <li class="card__item">
+            <a class="card__link" href="#">
+              <h3 class="card__title">Villas at Poco Diablo</h3>
+              <img class="card__image" src="#" alt="image">
             </a>
-            <span class="product-card__type">Гостиница</span>
-            <span class="product-card__price">От 5000</span>
-            <a class="product-card__details button" href="#">Подробнее</a>
-            <a class="product-card__like button">В избранное</a>
-            <div class="product-card__rating rating-star">
-              <ul class="rating-star__list">
-                <li class="rating-star__item">
-                  <img src="#" alt="1">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="2">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="3">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="4">
-                </li>
-              </ul>
-              <span class="product-card__caption">Рейтинг: 9,2</span>
+            <span class="card__type">Гостиница</span>
+            <span class="card__price">От 5000</span>
+            <a class="card__details button" href="#">Подробнее</a>
+            <a class="card__like button" href="#">В избранное</a>
+            <div class="card__rating">
+              <img src="#" alt="1">
+              <img src="#" alt="2">
+              <img src="#" alt="3">
+              <img src="#" alt="4">
             </div>
+            <span class="card__caption">Рейтинг: 9,2</span>
           </li>
-          <li class="product-card__item">
-            <a class="product-card__link" href="#">
-              <h3 class="product-card__title">Desert Quail Inn</h3>
-              <img class="product-card__image" src="#" alt="image">
+          <li class="card__item">
+            <a class="card__link" href="#">
+              <h3 class="card__title">Desert Quail Inn</h3>
+              <img class="card__image" src="#" alt="image">
             </a>
-            <span class="product-card__type">Гостиница</span>
-            <span class="product-card__price">От 5000</span>
-            <a class="product-card__details button" href="#">Подробнее</a>
-            <a class="product-card__like button">В избранное</a>
-            <div class="product-card__rating rating-star">
-              <ul class="rating-star__list">
-                <li class="rating-star__item">
-                  <img src="#" alt="1">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="2">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="3">
-                </li>
-              </ul>
-              <span class="product-card__caption">Рейтинг: 6,9</span>
+            <span class="card__type">Гостиница</span>
+            <span class="card__price">От 5000</span>
+            <a class="card__details button" href="#">Подробнее</a>
+            <a class="card__like button" href="#">В избранное</a>
+            <div class="card__rating">
+              <img src="#" alt="1">
+              <img src="#" alt="2">
+              <img src="#" alt="3">
             </div>
+            <span class="card__caption">Рейтинг: 6,9</span>
           </li>
-          <li class="product-card__item">
-            <a class="product-card__link" href="#">
-              <h3 class="product-card__title">GreenTree Inn</h3>
-              <img class="product-card__image" src="#" alt="image">
+          <li class="card__item">
+            <a class="card__link" href="#">
+              <h3 class="card__title">GreenTree Inn</h3>
+              <img class="card__image" src="#" alt="image">
             </a>
-            <span class="product-card__type">Гостиница</span>
-            <span class="product-card__price">От 1500</span>
-            <a class="product-card__details button" href="#">Подробнее</a>
-            <a class="product-card__like button">В избранное</a>
-            <div class="product-card__rating rating-star">
-              <ul class="rating-star__list">
-                <li class="rating-star__item">
-                  <img src="#" alt="1">
-                </li>
-                <li class="rating-star__item">
-                  <img src="#" alt="2">
-                </li>
-              </ul>
-              <span class="product-card__caption">Рейтинг: 5,0</span>
+            <span class="card__type">Гостиница</span>
+            <span class="card__price">От 1500</span>
+            <a class="card__details button" href="#">Подробнее</a>
+            <a class="card__like button" href="#">В избранное</a>
+            <div class="card__rating">
+              <img src="#" alt="1">
+              <img src="#" alt="2">
             </div>
+            <span class="card__caption">Рейтинг: 5,0</span>
           </li>
         </ul>
         <ul class="pagination">
@@ -290,4 +260,5 @@
       </a>
     </footer>
   </body>
+
 </html>
