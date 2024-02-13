@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
@@ -55,30 +56,30 @@
         <p class="reasons__title">Седона — небольшой городок в Аризоне,
           заслуживающий большего!</p>
         <p class="reasons__text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
-        <ul class="reasons__list">
-          <li class="reasons__item reason_with-image">
+        <ul class="reasons__list ">
+          <li class="reasons__item reasons__item--with-image">
             <div class="reason-wrapper">
               <h3 class="reason-title">Настоящий городок</h3>
               <p class="reason-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
             <img class="reason-image" src="images/reason--city.jpg" width="800" height="385" alt="Дом на фоне гор">
           </li>
-          <li class="reasons__item reason reason_light">
+          <li class="reasons__item reason reasons__item--light">
             <h3 class="reason-title">Небольшая
               площадь</h3>
             <p class="reason-text">Все достопримечательности находятся очень близко</p>
           </li>
-          <li class="reasons__item reason_light">
+          <li class="reasons__item reasons__item--light">
             <h3 class="reason-title">Красивая
               дорога</h3>
             <p class="reason-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="reasons__item reason_light">
+          <li class="reasons__item reasons__item--light">
             <h3 class="reason-title">Мало
               туристов</h3>
             <p class="reason-text">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
-          <li class="reasons__item reason_with-image">
+          <li class="reasons__item reasons__item--with-image">
             <div class="reason-wrapper">
               <h3 class="reason-title">Там есть
                 мост дьявола</h3>
@@ -92,17 +93,17 @@
         <h2 class="advantages__title">Приезжайте в Седону отдохнуть в комфорте и уюте!</h2>
         <p class="advantages__text">Опытный персонал и качественное обслуживание!</p>
         <ul class="advantages__list">
-          <li class="advantages__item advantages__item_dark">
+          <li class="advantages__item advantages__item--dark">
             <h3 class="advantage-title">Жильё</h3>
             <p class="advantage-text">Рекомендуем пожить в настоящем мотеле,
               всё как в кино!</p>
           </li>
-          <li class="advantages__item advantages__item_light">
+          <li class="advantages__item advantages__item--light">
             <h3 class="advantage-title">Еда</h3>
             <p class="advantage-text">Всегда заказывайте
               топовый фирменный бургер, вы не разочаруетесь!</p>
           </li>
-          <li class="advantages__item advantages__item_dark">
+          <li class="advantages__item advantages__item--dark">
             <h3 class="advantage-title">Сувениры</h3>
             <p class="advantage-text">Не только китайского,
               но и настоящего местного производства!</p>
@@ -110,16 +111,16 @@
         </ul>
       </section>
       <section class="interest">
-        <h2 class="interest__title"></h2>
+        <h2 class="interest__title">Поиск гостиницы</h2>
         <p class="interest__title">Заинтересовались?</p>
         <p class="interest__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <a class="interest__form button" href="#">Поиск гостиницы в Седоне</a>
       </section>
-      <section class="subscribe subscribe_without-background">
+      <section class="subscribe subscribe--without-background">
         <h2 class="subscribe__title">Подпишитесь на рассылку</h2>
         <p class="subscribe__text">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="subscribe__form" action="https://echo.htmlacademy.ru/" method="post">
-          <label for="subscribe-email">Email</label>
+          <label class="subscribe-label" for="subscribe-email">Email</label>
           <input class="subscribe__field" type="email" id="subscribe-email" name="subscribe-email" placeholder="Ваш е-mail">
           <button class="subscribe__button" type="submit">Подписаться</button>
         </form>
@@ -144,8 +145,8 @@
         </li>
       </ul>
       <a class="main-footer__phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-      <a class="main-footer__about-logo" target="_blank" rel="noreferrer noopener" href="https://htmlacademy.ru/">
-        <img src="#" width="115" height="33" alt="Посетить сайт разработчика HTML Academy">
+      <a class="main-footer__about-logo footer-logo-link" target="_blank" rel="noreferrer noopener" href="https://htmlacademy.ru/">
+        <img class="footer-logo-image" src="#" width="115" height="33" alt="Посетить сайт разработчика HTML Academy">
       </a>
     </footer>
   </body>

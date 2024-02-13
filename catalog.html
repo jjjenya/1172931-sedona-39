@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
@@ -21,7 +22,7 @@
             <a class="site-nav__link" href="#">О Седоне</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link ite-nav__link-current" title="Вы уже на странице «Гостиницы»">Гостиницы</a>
+            <a class="site-nav__link site-nav__link-current" title="Вы уже на странице «Гостиницы»">Гостиницы</a>
           </li>
         </ul>
         <ul class="nav-list user-nav">
@@ -118,7 +119,7 @@
           <button class="catalog__button button-submit" type="button">Применить</button>
           <button class="catalog__button button-reset" type="reset">Сбросить</button>
         </form>
-        <p class="filter-result">Найдено гостиниц: <span>38</span></р>
+        <p class="filter-result">Найдено гостиниц: <span>38</span></p>
           <select class="catalog__select" aria-label="Сортировка">
             <option value="popular">Сначала популярные</option>
             <option value="cheap">Сначала дешевые</option>
@@ -126,17 +127,17 @@
           </select>
         <ul class="switch-buttons view">
           <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+            <a class="button switch switch--active" href="#">
               <span class="visually-hidden">Показать карточки мелко</span>
             </a>
           </li>
           <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+            <a class="button switch switch--active" href="#">
               <span class="visually-hidden">Показать карточки крупно</span>
             </a>
           </li>
           <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+            <a class="button switch switch--active" href="#">
               <span class="visually-hidden">Показать список</span>
             </a>
           </li>
@@ -152,8 +153,9 @@
             <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
             <button class="card__like button" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">4 звезды</span></div>
+              <span class="card__caption">Рейтинг: 8,5</span>
             </div>
-            <span class="card__caption">Рейтинг: 8,5</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -165,8 +167,9 @@
             <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
             <button class="card__like button" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">4 звезды</span></div>
+              <span class="card__caption">Рейтинг: 9,2</span>
             </div>
-            <span class="card__caption">Рейтинг: 9,2</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -178,8 +181,9 @@
             <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
             <button class="card__like button" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">3 звезды</span></div>
+              <span class="card__caption">Рейтинг: 6,9</span>
             </div>
-            <span class="card__caption">Рейтинг: 6,9</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -191,28 +195,29 @@
             <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
             <button class="card__like button" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">2 звезды</span></div>
+              <span class="card__caption">Рейтинг: 5,0</span>
             </div>
-            <span class="card__caption">Рейтинг: 5,0</span>
           </li>
         </ul>
         <ul class="pagination">
           <li class="pagination__item">
-            <a class="pagination__link pagination--current" href="#">1</a>
+            <a class="pagination__link pagination__link--current" href="#">1</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">2</a>
+            <a class="pagination__link pagination__link--disabled" href="#">2</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">3</a>
+            <a class="pagination__link pagination__link--disabled" href="#">3</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">4</a>
+            <a class="pagination__link pagination__link--disabled" href="#">4</a>
           </li>
           <li class="pagination__item pagination__bridge">
-            <span>...</span>
+            <span class="pagination__text">...</span>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">10</a>
+            <a class="pagination__link pagination__link--disabled" href="#">10</a>
           </li>
         </ul>
       </section>
