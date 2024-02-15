@@ -1,3 +1,5 @@
+/* Font */
+
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
@@ -14,9 +16,257 @@
   font-display: swap;
 }
 
+/* Сommon */
+
 body {
   font-family: "PT Sans", sans-serif;
 
   font-size: 18px;
   line-height: 21px;
+  color: #000000;
+}
+
+img {
+  display: block;
+}
+
+.site-nav__link {
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-text {
+  font-size: 22px;
+  line-height: 26px;
+  color: #333333;
+}
+
+.main-footer__phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.button--dark {
+  background-color: #756157;
+}
+
+.button--light {
+  background-color: #82B3D3;
+}
+
+.button--transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.button--like {
+  background-color: #7DB54F;
+}
+
+.button--decorative {
+  background-color: #F2F2F2;
+}
+
+
+
+/* Index */
+
+.hero {
+  background-color: #c3dded;
+  background-image: url("../images/welcome--background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.reasons__item--with-image .reason-title,
+.reasons__item--with-image .reason-text,
+.reasons__item--with-image .reason-image {
+  color: #FFFFFF;
+}
+
+.reasons__item--with-image {
+  background-color: #82B3D3;
+}
+
+.reasons__item--lighter {
+  background-color: #F0F6FA;
+}
+
+.reasons__item--light {
+  background-color: #E6F0F6;
+}
+
+.reasons__item--light .reason-title,
+.service-title {
+  color: #000000;
+}
+
+.reasons__item--light .reason-text,
+.service-text {
+  color: #333333;
+}
+
+.reason-title,
+.service-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reason-text,
+.service-text {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.services__item--dark {
+  background-color: #F0F6FA;
+}
+
+.subscribe--with-background {
+  background-color: #81B3D3;
+  background-image: url("../images/subscribe--background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subscribe--with-background .section-title,
+.subscribe--with-background .section-text {
+  color: #ffffff;
+}
+
+.subscribe__field::placeholder {
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.6;
+  background-color: #f2f2f2;
+}
+
+
+/* Catalog */
+
+.inner__wrapper-header-filter {
+  background-color: #81B3D3;
+  background-image: url("../images/filter--background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: left;
+  color: #ffffff;
+
+}
+
+.inner__title {
+  font-size: 60px;
+  line-height: 78px;
+}
+
+.breadcrumbs__link {
+  font-size: 16px;
+  line-height: 21px;
+  color: inherit;
+}
+
+.filter-group__title {
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: capitalize;
+}
+
+.switch--active {
+  border: 2px solid #000000;
+}
+
+.switch--disabled {
+  border: 2px solid #E5E5E5;
+}
+
+.control-input {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.catalog__select {
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.card__item {
+  border: 1px solid #e6e6e6;
+}
+
+.card__link {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+}
+
+.card__type,
+.card__price {
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.card__caption {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+.pagination__link {
+  font-size: 20px;
+  line-height: 36px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.pagination__text {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.pagination__link--current {
+  color: #000000;
+  background-color: #F2F2F2;
+}
+
+
+.pagination__link--disabled {
+  color: #ffffff;
+  background-color: #82B3D3;
 }
