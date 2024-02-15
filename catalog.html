@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
@@ -21,7 +22,7 @@
             <a class="site-nav__link" href="#">О Седоне</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link ite-nav__link-current" title="Вы уже на странице «Гостиницы»">Гостиницы</a>
+            <a class="site-nav__link site-nav__link-current" title="Вы уже на странице «Гостиницы»">Гостиницы</a>
           </li>
         </ul>
         <ul class="nav-list user-nav">
@@ -41,102 +42,107 @@
           </li>
           <li class="user-nav__item">
             <!-- кнопка на модальное окно -->
-            <button class="user-nav__modal">Хочу сюда!</button>
+            <button class="user-nav__modal button button--dark">Хочу сюда!</button>
           </li>
         </ul>
       </nav>
     </header>
     <main class="main-index inner">
-      <header class="inner__header">
-        <h1 class="inner__title">Гостиницы Седоны</h1>
-        <nav class="breadcrumbs" aria-label="Хлебные крошки">
-          <ol class="breadcrumbs">
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="index.html">
-                <span class="visually-hidden">На главную</span>
-              </a>
-            </li>
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" title="Текущая страница">Гостиницы</a>
-            </li>
-          </ol>
-        </nav>
-      </header>
+      <div class="inner__wrapper-header-filter">
+        <header class="inner__header">
+          <h1 class="inner__title">Гостиницы Седоны</h1>
+          <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">
+                  <span class="visually-hidden">На главную</span>
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" title="Текущая страница">Гостиницы</a>
+              </li>
+            </ol>
+          </nav>
+        </header>
+        <section class="filter">
+          <h2 class="visually-hidden">Фильтр</h2>
+          <form class="filter__form" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-group">
+              <legend class="filter-group__title">Инфраструктура:</legend>
+              <ul class="filter-group__list">
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="pool" checked>
+                    Бассейн
+                  </label>
+                </li>
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="parking" checked>
+                    Парковка
+                  </label>
+                </li>
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="wi-fi">
+                    Wi-Fi
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter-group">
+              <legend class="filter-group__title">Тип жилья:</legend>
+              <ul class="filter-group__list">
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="radio" checked>
+                    Гостиница
+                  </label>
+                </li>
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="radio">
+                    Мотель
+                  </label>
+                </li>
+                <li class="filter-group__item">
+                  <label class="control">
+                    <input class="control-input" type="radio">
+                    Апартаменты
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <div class="filter-price">
+            </div>
+
+            <button class="filter__button button-submit button button--light" type="button">Применить</button>
+            <button class="filter__button button-reset button button--transparent" type="reset">Сбросить</button>
+          </form>
+        </section>
+      </div>
       <section class="catalog">
-        <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
-        <form class="catalog__filter" action="https://echo.htmlacademy.ru/" method="get">
-          <fieldset class="filter-group">
-            <legend class="filter-group__title">Инфраструктура:</legend>
-            <ul class="filter-group__list">
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="pool" checked>
-                  Бассейн
-                </label>
-              </li>
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="parking" checked>
-                  Парковка
-                </label>
-              </li>
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="wi-fi">
-                  Wi-Fi
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="filter-group">
-            <legend class="filter-group__title">Тип жилья:</legend>
-            <ul class="filter-group__list">
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="radio" checked>
-                  Гостиница
-                </label>
-              </li>
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="radio">
-                  Мотель
-                </label>
-              </li>
-              <li class="filter-group__item">
-                <label class="control">
-                  <input class="control-input" type="radio">
-                  Апартаменты
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-
-          <div class="filter-price">
-          </div>
-
-          <button class="catalog__button button-submit" type="button">Применить</button>
-          <button class="catalog__button button-reset" type="reset">Сбросить</button>
-        </form>
-        <p class="filter-result">Найдено гостиниц: <span>38</span></р>
-          <select class="catalog__select" aria-label="Сортировка">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap">Сначала дешевые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-        <ul class="switch-buttons view">
-          <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+        <h2 class="visually-hidden">Результат поиска</h2>
+        <p class="filter-result section-title">Найдено гостиниц: <span>38</span></p>
+        <select class="catalog__select" aria-label="Сортировка">
+          <option value="popular">Сначала популярные</option>
+          <option value="cheap">Сначала дешевые</option>
+          <option value="expensive">Сначала дорогие</option>
+        </select>
+        <ul class="catalog-switch view">
+          <li class="catalog-switch__item">
+            <a class="button switch switch--active" href="#">
               <span class="visually-hidden">Показать карточки мелко</span>
             </a>
           </li>
-          <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+          <li class="catalog-switch__item">
+            <a class="button switch switch--disabled" href="#">
               <span class="visually-hidden">Показать карточки крупно</span>
             </a>
           </li>
-          <li class="switch-buttons__item">
-            <a class="button switch--active" href="#">
+          <li class="catalog-switch__item">
+            <a class="button switch switch--disabled" href="#">
               <span class="visually-hidden">Показать список</span>
             </a>
           </li>
@@ -149,11 +155,12 @@
             </a>
             <span class="card__type">Гостиница</span>
             <span class="card__price">От 4000</span>
-            <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
-            <button class="card__like button" type="button">В избранное</button>
+            <a class="card__details button button--dark" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
+            <button class="card__like button button--light" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">4 звезды</span></div>
+              <span class="card__caption button button--decorative">Рейтинг: 8,5</span>
             </div>
-            <span class="card__caption">Рейтинг: 8,5</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -162,11 +169,12 @@
             </a>
             <span class="card__type">Гостиница</span>
             <span class="card__price">От 5000</span>
-            <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
-            <button class="card__like button" type="button">В избранное</button>
+            <a class="card__details button button--dark" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
+            <button class="card__like button button--like" type="button">В избранном</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">4 звезды</span></div>
+              <span class="card__caption button button--decorative">Рейтинг: 9,2</span>
             </div>
-            <span class="card__caption">Рейтинг: 9,2</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -175,11 +183,12 @@
             </a>
             <span class="card__type">Гостиница</span>
             <span class="card__price">От 5000</span>
-            <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
-            <button class="card__like button" type="button">В избранное</button>
+            <a class="card__details button button--dark" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
+            <button class="card__like button button--light" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">3 звезды</span></div>
+              <span class="card__caption button button--decorative">Рейтинг: 6,9</span>
             </div>
-            <span class="card__caption">Рейтинг: 6,9</span>
           </li>
           <li class="card__item">
             <a class="card__link" href="#">
@@ -188,41 +197,42 @@
             </a>
             <span class="card__type">Гостиница</span>
             <span class="card__price">От 1500</span>
-            <a class="card__details button" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
-            <button class="card__like button" type="button">В избранное</button>
+            <a class="card__details button button--dark" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
+            <button class="card__like button button--light" type="button">В избранное</button>
             <div class="card__rating">
+              <div class="card__stars stars-4"><span class="visually-hidden">2 звезды</span></div>
+              <span class="card__caption button button--decorative">Рейтинг: 5,0</span>
             </div>
-            <span class="card__caption">Рейтинг: 5,0</span>
           </li>
         </ul>
         <ul class="pagination">
           <li class="pagination__item">
-            <a class="pagination__link pagination--current" href="#">1</a>
+            <a class="pagination__link pagination__link--current" href="#">1</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">2</a>
+            <a class="pagination__link pagination__link--disabled" href="#">2</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">3</a>
+            <a class="pagination__link pagination__link--disabled" href="#">3</a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">4</a>
+            <a class="pagination__link pagination__link--disabled" href="#">4</a>
           </li>
           <li class="pagination__item pagination__bridge">
-            <span>...</span>
+            <span class="pagination__text">...</span>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link pagination--disabled" href="#">10</a>
+            <a class="pagination__link pagination__link--disabled" href="#">10</a>
           </li>
         </ul>
       </section>
-      <section class="subscribe subscribe_without-background">
-        <h2 class="subscribe__title">Подпишитесь на рассылку</h2>
-        <p class="subscribe__text">Только полезная информация и никакого спама, честное бойскаутское!</p>
+      <section class="subscribe subscribe--without-background">
+        <h2 class="subscribe__title section-title">Подпишитесь на рассылку</h2>
+        <p class="subscribe__text section-text">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="subscribe__form" action="https://echo.htmlacademy.ru/" method="post">
           <label for="subscribe-email">Email</label>
           <input class="subscribe__field" type="email" id="subscribe-email" name="subscribe-email" placeholder="Ваш е-mail">
-          <button class="subscribe__button" type="submit">Подписаться</button>
+          <button class="subscribe__button button button--light" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
