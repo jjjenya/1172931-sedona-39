@@ -16,7 +16,29 @@
   font-display: swap;
 }
 
+/* Font - END */
+
+
 /* Сommon */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
 
 body {
   font-family: "PT Sans", sans-serif;
@@ -24,10 +46,17 @@ body {
   font-size: 18px;
   line-height: 21px;
   color: #000000;
+  background-color: #f2f2f2;
 }
 
 img {
   display: block;
+}
+
+.list-all {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .site-nav__link {
@@ -66,10 +95,11 @@ img {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: #FFFFFF;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
+  border: none;
 }
 
 .button--dark {
@@ -92,15 +122,15 @@ img {
   background-color: #F2F2F2;
 }
 
+/* Сommon - END */
 
 
 /* Index */
 
 .hero {
-  background-color: #c3dded;
-  background-image: url("../images/welcome--background.jpg");
+  background-color: #C3DDED;
+  background-image: url("../images/welcome--background.jpg") no-repeat;
   background-size: 100% auto;
-  background-repeat: no-repeat;
   text-align: center;
 }
 
@@ -153,36 +183,35 @@ img {
 
 .subscribe--with-background {
   background-color: #81B3D3;
-  background-image: url("../images/subscribe--background.jpg");
+  background-image: url("../images/subscribe--background.jpg") no-repeat;
   background-size: 100% auto;
-  background-repeat: no-repeat;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .subscribe--with-background .section-title,
 .subscribe--with-background .section-text {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .subscribe__field::placeholder {
   font-size: 18px;
   line-height: 24px;
   opacity: 0.6;
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
+
+/* Index - END */
 
 
 /* Catalog */
 
 .inner__wrapper-header-filter {
   background-color: #81B3D3;
-  background-image: url("../images/filter--background.jpg");
+  background-image: url("../images/filter--background.jpg") no-repeat;
   background-size: 100% auto;
-  background-repeat: no-repeat;
   text-align: left;
-  color: #ffffff;
-
+  color: #FFFFFF;
 }
 
 .inner__title {
@@ -267,6 +296,14 @@ img {
 
 
 .pagination__link--disabled {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #82B3D3;
 }
+
+/* Catalog - END */
+
+
+/* test */
+/* .nav-list {
+  display: flex;
+} */
