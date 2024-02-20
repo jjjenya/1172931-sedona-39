@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        outline: 1px red solid;
+        outline-offset: -1px;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      .page-container {
+        margin: 0 auto;
+        width: 1200px;
+
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .main-container {
+        flex-grow: 1;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>header</header>
+      <main class="main-container">main</main>
+      <footer>footer</footer>
+    </div>
+  </body>
+
+</html>
