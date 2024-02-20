@@ -20,9 +20,6 @@
 
 
 /* Сommon */
-
-/* * {outline: 1px red solid; outline-offset: -1px;} */
-
 *,
 *::before,
 *::after {
@@ -66,6 +63,7 @@ p {
 
 .main-header,
 .main-index,
+.main-catalog,
 .main-footer {
   background-color: #ffffff;
 }
@@ -148,6 +146,7 @@ p {
 
 .button--dark {
   background-color: #756157;
+
 }
 
 .button--light {
@@ -176,7 +175,6 @@ p {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .logo-link {
@@ -336,36 +334,50 @@ p {
   line-height: 36px;
 }
 
-.subscribe--with-background {
+.subscribe.section-intro {
   min-height: 415px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+}
+
+.subscribe--with-background {
   background-color: #81B3D3;
   background-image: url("../images/subscribe--background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  text-align: center;
   color: #ffffff;
 }
 
-.subscribe__title.section-intro__title {
+.subscribe .section-intro__title {
   margin-bottom: 20px;
-  color: #ffffff;
 }
 
-.subscribe__text.section-intro__text {
+.subscribe .section-intro__text {
   margin-bottom: 54px;
+}
+
+.subscribe--with-background .section-intro__title,
+.subscribe--with-background .section-intro__text {
   color: #ffffff;
 }
 
+.subscribe--without-background .section-intro__title {
+  color: #000000;
+}
+
+.subscribe--without-background .section-intro__text {
+  color: #333333;
+}
+
+/* почему тут не работает border-radius */
 .subscribe__form {
   min-width: 684px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #000000;
 }
 
 .subscribe__field {
@@ -373,6 +385,7 @@ p {
   border: 0;
   padding: 14px 20px;
   background-color: #f2f2f2;
+  border-radius: 4px 0 0 4px;
 }
 
 .subscribe__button {
@@ -389,7 +402,6 @@ p {
   opacity: 0.6;
 }
 
-
 .main-footer-wrapper {
   width: 1060px;
   min-height: 120px;
@@ -405,6 +417,7 @@ p {
   flex-direction: row;
   justify-content: start;
 }
+
 /* Index - END */
 
 
@@ -417,6 +430,24 @@ p {
   background-size: 100% auto;
   text-align: left;
   color: #ffffff;
+}
+
+.inner__header,
+.filter {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.filter__button.button--light,
+.filter__button.button--transparent {
+  min-width: 191px;
+  padding: 8px 20px;
+}
+
+.filter-result--text {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: bold;
 }
 
 .inner__title {
@@ -434,6 +465,13 @@ p {
   font-size: 20px;
   line-height: 26px;
   text-transform: capitalize;
+}
+
+.catalog {
+  width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .switch--active {
@@ -457,6 +495,15 @@ p {
 
 .card__item {
   border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.catalog-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card__link {
@@ -474,6 +521,14 @@ p {
   color: #333333;
 }
 
+.card__details.button--dark,
+.card__like.button--light,
+.card__like.button--like,
+.card__caption.button--decorative {
+  min-width: 140px;
+  padding: 8px 20px;
+}
+
 .card__caption {
   font-size: 16px;
   line-height: 20px;
@@ -482,19 +537,41 @@ p {
   text-transform: uppercase;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.pagination__item {
+  min-width: 60px;
+  min-height: 60px;
+  margin-right: 8px;
+
+}
+
+.pagination__link,
+.pagination__text {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+/* как отцентрировать по вертикали?, кроме line-height */
 .pagination__link {
   font-size: 20px;
-  line-height: 36px;
+  line-height: 60px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .pagination__text {
   font-size: 22px;
-  line-height: 26px;
+  line-height: 60px;
 }
 
 .pagination__link--current {
+  font-weight: bold;
   color: #000000;
   background-color: #f2f2f2;
 }
