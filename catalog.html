@@ -17,34 +17,32 @@
           </a>
           <ul class="nav-list site-nav list-all">
             <li class="site-nav__item">
-              <a class="site-nav__link site-nav__link-current" title="Вы уже на странице «Главная»">Главная</a>
+              <a class="site-nav__link nav-item site-nav__link-current" title="Вы уже на странице «Главная»">Главная</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link" href="#">О Седоне</a>
+              <a class="site-nav__link nav-item" href="#">О Седоне</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link" href="catalog.html">Гостиницы</a>
+              <a class="site-nav__link nav-item" href="catalog.html">Гостиницы</a>
             </li>
           </ul>
           <ul class="nav-list user-nav list-all">
             <li class="user-nav__item">
-              <a class="user-nav__search" href="#">
+              <a class="user-nav__search nav-item" href="#">
                 <span class="visually-hidden">
                   Поиск
                 </span>
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="user-nav__like" href="#">
+              <a class="user-nav__like nav-item" href="#">
                 <span class="visually-hidden">
                   Избранное
                 </span>
               </a>
             </li>
-            <li class="user-nav__item">
-              <button class="user-nav__modal button button--dark">Хочу сюда!</button>
-            </li>
           </ul>
+          <button class="user-nav-modal button button--dark">Хочу сюда!</button>
         </nav>
       </header>
       <main class="main-catalog inner main-container">
@@ -204,6 +202,20 @@
                 <span class="card__caption button button--decorative">Рейтинг: 5,0</span>
               </div>
             </li>
+            <li class="card__item">
+              <a class="card__link" href="#">
+                <h3 class="card__title">GreenTree Inn</h3>
+                <img class="card__image" src="images/cards/hotel-4.jpg" width="300" height="212" alt="Макушка горы на фоне зведного неба">
+              </a>
+              <span class="card__type">Гостиница</span>
+              <span class="card__price">От 1500</span>
+              <a class="card__details button button--dark" target="_blank" rel="noreferrer noopener" href="#">Подробнее</a>
+              <button class="card__like button button--light" type="button">В избранное</button>
+              <div class="card__rating">
+                <div class="card__stars stars-4"><span class="visually-hidden">2 звезды</span></div>
+                <span class="card__caption button button--decorative">Рейтинг: 5,0</span>
+              </div>
+            </li>
           </ul>
           <ul class="pagination list-all">
             <li class="pagination__item">
@@ -240,17 +252,17 @@
         <div class="main-footer-wrapper">
           <ul class="main-footer__socials socials list-all">
             <li class="socials__item">
-              <a class="socials__link" href="https://vk.com/htmlacademy">
+              <a class="socials__link socials-item" href="https://vk.com/htmlacademy">
                 <span class="visually-hidden">Vkontakte</span>
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="https://t.me/htmlacademy">
+              <a class="socials__link socials-item" href="https://t.me/htmlacademy">
                 <span class="visually-hidden">Telegram</span>
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="https://www.youtube.com/user/htmlacademyru">
+              <a class="socials__link socials-item" href="https://www.youtube.com/user/htmlacademyru">
                 <span class="visually-hidden">Youtube</span>
               </a>
             </li>
