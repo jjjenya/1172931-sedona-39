@@ -18,6 +18,51 @@
 
 /* Font - END */
 
+/* * {
+  outline: 1px red solid;
+  outline-offset: -1px;
+} */
+
+/* Почему body в высоту 904??? */
+/* flex-direction: row; - дефолтное значение, можно не прописывать */
+
+
+/* Var */
+:root {
+  --main-bgcolor: #f2f2f2;
+  --white: #ffffff;
+
+  --text-basic: #000000;
+  --text-second: #333333;
+
+  --button-dark: #756157;
+  --button-light: #82b3d3;
+  --button-like: #7db54f;
+  --button-decorative: #f2f2f2;
+
+  --spare-bgcolor-hero: #c3dded;
+  --spare-bgcolor-subscribe: #81b3d3;
+  --spare-bgcolor-filter: #81b3d3;
+
+  --bgcolor-advantages-image: #82b3d3;
+  --bgcolor-advantages-light: #e6f0f6;
+  --bgcolor-advantages-lighter: #f0f6fa;
+  --bgcolor-services-dark: #f0f6fa;
+  --bgcolor-subscribe-field: #f2f2f2;
+
+  --border-dark: #000000;
+  --border-light: #e5e5e5;
+  --border-card: #e6e6e6;
+
+  --main-shadow: rgba(0, 0, 0, 0.2);
+
+  --bgcolor-pagination-current: #f2f2f2;
+  --bgcolor-pagination-disabled: #82b3d3;
+
+  --font-family: "PT Sans", sans-serif;
+}
+
+/* Var END */
 
 /* Сommon */
 *,
@@ -33,24 +78,28 @@ html {
 body {
   margin: 0;
 
-  font-family: "PT Sans", sans-serif;
+  font-family: var(--font-family);
   font-size: 18px;
   line-height: 21px;
-  color: #000000;
-  background-color: #f2f2f2;
+  font-weight: normal;
+  color: var(--text-basic);
+  background-color: var(--main-bgcolor);
 }
 
 img {
-  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-h1,
+/* не проходит критерий CSS-02 -- нужно будет убирать точечно */
+/* h1,
 h2,
 h3,
 h4,
 p {
   margin: 0;
-}
+} */
 
 /* почему  не работает bg-color: #ffffff для всей страницы */
 .page-container {
@@ -59,13 +108,14 @@ p {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 15px 0 var(--main-shadow);
 }
 
 .main-header,
 .main-index,
 .main-catalog,
 .main-footer {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .main-container {
@@ -92,9 +142,15 @@ p {
 }
 
 .site-nav__link {
+  display: block;
+  padding: 8px;
+}
+
+.nav-item,
+.socials-item {
   font-size: 20px;
   line-height: 24px;
-  color: #000000;
+  color: var(--text-basic);
   font-weight: 700;
   text-transform: capitalize;
   text-decoration: none;
@@ -113,7 +169,7 @@ p {
   margin-bottom: 25px;
   font-size: 30px;
   line-height: 36px;
-  color: #000000;
+  color: var(--text-basic);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -121,13 +177,13 @@ p {
 .section-intro__text {
   font-size: 22px;
   line-height: 26px;
-  color: #333333;
+  color: var(--text-second);
 }
 
 .main-footer__phone {
   font-size: 40px;
   line-height: 40px;
-  color: #000000;
+  color: var(--text-basic);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -139,30 +195,30 @@ p {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--white);
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .button--dark {
-  background-color: #756157;
+  background-color: var(--button-dark);
 
 }
 
 .button--light {
-  background-color: #82b3d3;
+  background-color: var(--button-light);
 }
 
 .button--transparent {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .button--like {
-  background-color: #7db54f;
+  background-color: var(--button-like);
 }
 
 .button--decorative {
-  background-color: #f2f2f2;
+  background-color: var(--button-decorative);
 }
 
 /* Сommon - END */
@@ -171,14 +227,25 @@ p {
 /* Index */
 
 .main-nav {
-  width: 1060px;
+  max-width: 1060px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .logo-link {
   margin-right: 30px;
+  align-self: flex-start;
+}
+
+.logo-image {
+  /* display: block;
+  - так нормализировать изображение нельзя,
+  нормализация по критериям сделана - см.строку 89,
+  но в итоге изображение не заполняет всё пространство ссылки((
+  */
+
 }
 
 .site-nav {
@@ -189,10 +256,7 @@ p {
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.site-nav__item {
-  padding: 8px 16px;
+  gap: 8px;
 }
 
 .user-nav {
@@ -201,24 +265,24 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.user-nav__item:nth-child(2) {
-  margin-right: 20px;
-}
-
-.user-nav__modal {
+.user-nav-modal {
   min-width: 160px;
+  margin-left: 20px;
   padding: 8px;
 }
 
 .hero {
   min-height: 485px;
   padding: 50px;
-  background-color: #c3dded;
-  background-image: url("../images/welcome--background.jpg");
+  background-color: var(--spare-bgcolor-hero);
+  background-image: url("../images/welcome--divider.svg"), url("../images/welcome--background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 100% auto, cover;
+  background-position: left bottom, left top;
   text-align: center;
 }
 
@@ -237,11 +301,9 @@ p {
   flex-wrap: wrap;
 }
 
-.advantages__item:nth-child(2),
-.advantages__item:nth-child(3),
-.advantages__item:nth-child(4),
+.advantages__item--without-image,
 .services__list .services__item {
-  max-width: 400px;
+  width: 400px;
   padding: 85px;
   text-align: center;
 }
@@ -270,29 +332,29 @@ p {
 .advantages__item--with-image .advantage-title,
 .advantages__item--with-image .advantage-text,
 .advantages__item--with-image .advantage-image {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .advantages__item--with-image {
-  background-color: #82b3d3;
+  background-color: var(--bgcolor-advantages-image);
 }
 
-.advantages__item--lighter {
-  background-color: #f0f6fa;
+.advantages__item--without-image:nth-child(2n) {
+  background-color: var(--bgcolor-advantages-lighter);
 }
 
-.advantages__item--light {
-  background-color: #E6F0F6;
+.advantages__item--without-image:nth-child(2n+1) {
+  background-color: var(--bgcolor-advantages-light);
 }
 
 .advantages__item--light .advantage-title,
 .service-title {
-  color: #000000;
+  color: var(--text-basic);
 }
 
 .advantages__item--light .advantage-text,
 .service-text {
-  color: #333333;
+  color: var(--text-second);
 }
 
 .advantage-title,
@@ -314,8 +376,12 @@ p {
   padding: 64px 70px;
 }
 
-.services__item--dark {
-  background-color: #f0f6fa;
+.services__item:nth-child(2n) {
+  background-color: var(--white);
+}
+
+.services__item:nth-child(2n+1) {
+  background-color: var(--bgcolor-services-dark);
 }
 
 .interest {
@@ -343,11 +409,11 @@ p {
 }
 
 .subscribe--with-background {
-  background-color: #81B3D3;
+  background-color: var(--spare-bgcolor-subscribe);
   background-image: url("../images/subscribe--background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  color: #ffffff;
+  background-size: cover;
+  color: var(--white);
 }
 
 .subscribe .section-intro__title {
@@ -360,15 +426,15 @@ p {
 
 .subscribe--with-background .section-intro__title,
 .subscribe--with-background .section-intro__text {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .subscribe--without-background .section-intro__title {
-  color: #000000;
+  color: var(--text-basic);
 }
 
 .subscribe--without-background .section-intro__text {
-  color: #333333;
+  color: var(--text-second);
 }
 
 /* почему тут не работает border-radius */
@@ -381,10 +447,14 @@ p {
 }
 
 .subscribe__field {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--text-basic);
   flex-grow: 1;
   border: 0;
   padding: 14px 20px;
-  background-color: #f2f2f2;
+  background-color: var(--bgcolor-subscribe-field);
   border-radius: 4px 0 0 4px;
 }
 
@@ -403,7 +473,7 @@ p {
 }
 
 .main-footer-wrapper {
-  width: 1060px;
+  max-width: 1060px;
   min-height: 120px;
   margin: 0 auto;
   display: flex;
@@ -416,6 +486,11 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: start;
+  flex-wrap: wrap;
+}
+
+.footer-logo-image {
+  /* display: block; */
 }
 
 /* Index - END */
@@ -424,17 +499,17 @@ p {
 /* Catalog */
 
 .inner__wrapper-header-filter {
-  background-color: #81B3D3;
+  background-color: var(--spare-bgcolor-filter);
   background-image: url("../images/filter--background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   text-align: left;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .inner__header,
 .filter {
-  width: 1060px;
+  max-width: 1060px;
   margin: 0 auto;
 }
 
@@ -468,40 +543,45 @@ p {
 }
 
 .catalog {
-  width: 1060px;
+  max-width: 1060px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .switch--active {
-  border: 2px solid #000000;
+  border: 2px solid var(--border-dark);
 }
 
 .switch--disabled {
-  border: 2px solid #e5e5e5;
+  border: 2px solid var(--border-light);
 }
 
 .control-input {
+  font-family: inherit;
   font-size: 18px;
   line-height: 23px;
 }
 
 .catalog__select {
+  font-family: inherit;
   font-size: 18px;
   line-height: 21px;
-  color: #333333;
+  color: var(--text-second);
+  background-color: var(--white);
 }
 
 .card__item {
-  border: 1px solid #e6e6e6;
+  width: 340px;
+  box-shadow: 0 0 0 1px var(--border-card);
   border-radius: 4px;
+  padding: 20px;
 }
 
 .catalog-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -510,15 +590,27 @@ p {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
-  color: #000000;
+  color: var(--text-basic);
   text-decoration: none;
+}
+
+.card__image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Почему ширина в итоге не 300, а 300.4 */
+.card__title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
 }
 
 .card__type,
 .card__price {
   font-size: 18px;
   line-height: 21px;
-  color: #333333;
+  color: var(--text-second);
 }
 
 .card__details.button--dark,
@@ -533,7 +625,7 @@ p {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  color: #333333;
+  color: var(--text-second);
   text-transform: uppercase;
 }
 
@@ -541,19 +633,16 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: start;
-}
-
-.pagination__item {
-  min-width: 60px;
-  min-height: 60px;
-  margin-right: 8px;
-
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .pagination__link,
 .pagination__text {
   display: block;
-  height: 100%;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 0 8px;
   text-align: center;
 }
 
@@ -572,14 +661,14 @@ p {
 
 .pagination__link--current {
   font-weight: bold;
-  color: #000000;
-  background-color: #f2f2f2;
+  color: var(--text-basic);
+  background-color: var(--bgcolor-pagination-current);
 }
 
 
 .pagination__link--disabled {
-  color: #ffffff;
-  background-color: #82b3d3;
+  color: var(--white);
+  background-color: var(--bgcolor-pagination-disabled);
 }
 
 /* Catalog - END */
