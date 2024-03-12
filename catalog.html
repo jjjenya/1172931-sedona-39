@@ -17,25 +17,25 @@
           </a>
           <ul class="nav-list site-nav list-all">
             <li class="site-nav__item">
-              <a class="site-nav__link nav-item site-nav__link-current" title="Вы уже на странице «Главная»">Главная</a>
+              <a class="site-nav__link nav-item" href="index.html">Главная</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link nav-item" href="#">О Седоне</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link nav-item" href="catalog.html">Гостиницы</a>
+              <a class="site-nav__link nav-item site-nav__link-current" title="Вы уже на странице «Гостиницы»" >Гостиницы</a>
             </li>
           </ul>
           <ul class="nav-list user-nav list-all">
             <li class="user-nav__item">
-              <a class="user-nav__search nav-item" href="#">
+              <a class="user-nav__link user-nav__search nav-item" href="#">
                 <span class="visually-hidden">
                   Поиск
                 </span>
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="user-nav__like nav-item" href="#">
+              <a class="user-nav__link user-nav__like nav-item" href="#">
                 <span class="visually-hidden">
                   Избранное
                 </span>
@@ -49,7 +49,7 @@
         <div class="inner__wrapper-header-filter">
           <header class="inner__header">
             <h1 class="inner__title">Гостиницы Седоны</h1>
-            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <nav class="breadcrumbs-nav" aria-label="Хлебные крошки">
               <ol class="breadcrumbs list-all">
                 <li class="breadcrumbs__item">
                   <a class="breadcrumbs__link" href="index.html">
@@ -114,37 +114,40 @@
 
               <div class="filter-price">
               </div>
-
-              <button class="filter__button button-submit button button--light" type="button">Применить</button>
-              <button class="filter__button button-reset button button--transparent" type="reset">Сбросить</button>
+              <div class="filter-button-wrapper">
+                <button class="filter__button button-submit button button--light" type="button">Применить</button>
+                <button class="filter__button button-reset button button--transparent" type="reset">Сбросить</button>
+              </div>
             </form>
           </section>
         </div>
         <section class="catalog">
           <h2 class="visually-hidden">Результат поиска</h2>
-          <p class="filter-result filter-result--text">Найдено гостиниц: <span class="filter-amount">38</span></p>
-          <select class="catalog__select" aria-label="Сортировка">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap">Сначала дешевые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-          <ul class="catalog-switch view list-all">
-            <li class="catalog-switch__item">
-              <a class="button switch switch--active" href="#">
-                <span class="visually-hidden">Показать карточки мелко</span>
-              </a>
-            </li>
-            <li class="catalog-switch__item">
-              <a class="button switch switch--disabled" href="#">
-                <span class="visually-hidden">Показать карточки крупно</span>
-              </a>
-            </li>
-            <li class="catalog-switch__item">
-              <a class="button switch switch--disabled" href="#">
-                <span class="visually-hidden">Показать список</span>
-              </a>
-            </li>
-          </ul>
+          <div class="catalog-select-wrapper">
+            <p class="filter-result filter-result--text">Найдено гостиниц: <span class="filter-amount">38</span></p>
+            <select class="catalog__select" aria-label="Сортировка">
+              <option value="popular">Сначала популярные</option>
+              <option value="cheap">Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+            <ul class="catalog-switch view list-all">
+              <li class="catalog-switch__item">
+                <a class="button switch switch--active" href="#">
+                  <span class="visually-hidden">Показать карточки мелко</span>
+                </a>
+              </li>
+              <li class="catalog-switch__item">
+                <a class="button switch switch--disabled" href="#">
+                  <span class="visually-hidden">Показать карточки крупно</span>
+                </a>
+              </li>
+              <li class="catalog-switch__item">
+                <a class="button switch switch--disabled" href="#">
+                  <span class="visually-hidden">Показать список</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <ul class="catalog-cards card list-all">
             <li class="card__item">
               <a class="card__link" href="#">
