@@ -138,7 +138,7 @@ p {
 .list-all {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
 .site-nav__link {
@@ -156,7 +156,12 @@ p {
   text-decoration: none;
 }
 
-/* почему нельзя выровнять по вертикали с помощью vertical-align: middle */
+.socials__item .socials__link {
+  min-width: 48px;
+  min-height: 40px;
+}
+
+/* -- старое: почему нельзя выровнять по вертикали с помощью vertical-align: middle */
 .section-intro {
   padding: 69px 70px;
   display: flex;
@@ -166,7 +171,6 @@ p {
 }
 
 .section-intro__title {
-  margin-bottom: 25px;
   font-size: 30px;
   line-height: 36px;
   color: var(--text-basic);
@@ -174,7 +178,18 @@ p {
   text-transform: uppercase;
 }
 
+.section-intro__title {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.advantages__intro .section-intro__title {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
 .section-intro__text {
+  margin: 0;
   font-size: 22px;
   line-height: 26px;
   color: var(--text-second);
@@ -275,6 +290,11 @@ p {
   padding: 8px;
 }
 
+.user-nav__item .user-nav__link {
+  min-width: 20px;
+  min-height: 20px;
+}
+
 .hero {
   min-height: 485px;
   padding: 50px;
@@ -324,8 +344,13 @@ p {
   text-align: center;
 }
 
-.advantage-title,
+.advantage-title{
+  margin: 0;
+  margin-bottom: 62px;
+}
+
 .service-title {
+  margin: 0;
   margin-bottom: 30px;
 }
 
@@ -367,6 +392,8 @@ p {
 
 .advantage-text,
 .service-text {
+  margin: 0;
+
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -416,13 +443,10 @@ p {
   color: var(--white);
 }
 
-.subscribe .section-intro__title {
-  margin-bottom: 20px;
-}
-
 .subscribe .section-intro__text {
   margin-bottom: 54px;
 }
+
 
 .subscribe--with-background .section-intro__title,
 .subscribe--with-background .section-intro__text {
@@ -472,6 +496,11 @@ p {
   opacity: 0.6;
 }
 
+.subscribe__text {
+  margin: 0;
+  margin-bottom: 54px;
+}
+
 .main-footer-wrapper {
   max-width: 1060px;
   min-height: 120px;
@@ -487,6 +516,7 @@ p {
   flex-direction: row;
   justify-content: start;
   flex-wrap: wrap;
+  max-width: 142px;
 }
 
 .footer-logo-image {
@@ -499,6 +529,8 @@ p {
 /* Catalog */
 
 .inner__wrapper-header-filter {
+  margin-bottom: 50px;
+  padding: 35px 70px;
   background-color: var(--spare-bgcolor-filter);
   background-image: url("../images/filter--background.jpg");
   background-repeat: no-repeat;
@@ -513,27 +545,66 @@ p {
   margin: 0 auto;
 }
 
+.catalog-select-wrapper {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.filter-button-wrapper {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
 .filter__button.button--light,
 .filter__button.button--transparent {
   min-width: 191px;
   padding: 8px 20px;
 }
 
+.filter__button.button-submit {
+  margin-bottom: 32px;
+}
+
+.filter-result {
+  margin: 0;
+}
+
 .filter-result--text {
   font-size: 30px;
   line-height: 36px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .inner__title {
+  margin: 0;
+  margin-bottom: 8px;
   font-size: 60px;
   line-height: 78px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
 }
 
 .breadcrumbs__link {
   font-size: 16px;
   line-height: 21px;
   color: inherit;
+}
+
+.filter__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .filter-group__title {
@@ -571,6 +642,17 @@ p {
   background-color: var(--white);
 }
 
+.catalog-switch {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.catalog-switch__item {
+  min-width: 48px;
+  min-height: 48px;
+}
+
 .card__item {
   width: 340px;
   box-shadow: 0 0 0 1px var(--border-card);
@@ -599,8 +681,9 @@ p {
   height: auto;
 }
 
-/* Почему ширина в итоге не 300, а 300.4 */
 .card__title {
+  margin: 0;
+  margin-bottom: 16px;
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
