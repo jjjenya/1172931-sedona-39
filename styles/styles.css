@@ -260,7 +260,6 @@ p {
   нормализация по критериям сделана - см.строку 89,
   но в итоге изображение не заполняет всё пространство ссылки((
   */
-
 }
 
 .site-nav {
@@ -344,7 +343,7 @@ p {
   text-align: center;
 }
 
-.advantage-title{
+.advantage-title {
   margin: 0;
   margin-bottom: 62px;
 }
@@ -446,7 +445,6 @@ p {
 .subscribe .section-intro__text {
   margin-bottom: 54px;
 }
-
 
 .subscribe--with-background .section-intro__title,
 .subscribe--with-background .section-intro__text {
@@ -591,6 +589,7 @@ p {
 .breadcrumbs {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .breadcrumbs__link {
@@ -604,7 +603,6 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .filter-group__title {
@@ -653,19 +651,22 @@ p {
   min-height: 48px;
 }
 
+.catalog-cards {
+  display: grid;
+  /* grid-template-columns: 340px 340px 340px; */
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
 .card__item {
-  width: 340px;
   box-shadow: 0 0 0 1px var(--border-card);
   border-radius: 4px;
   padding: 20px;
-}
-
-.catalog-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  gap: 16px 20px;
+  grid-template-rows: 1fr;
 }
 
 .card__link {
@@ -674,11 +675,16 @@ p {
   font-weight: 700;
   color: var(--text-basic);
   text-decoration: none;
+  grid-column: 1 / -1;
 }
 
 .card__image {
   max-width: 100%;
   height: auto;
+}
+
+.card__link .card__image {
+  margin-bottom: 16px;
 }
 
 .card__title {
@@ -687,6 +693,10 @@ p {
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
+}
+
+.card__price {
+  text-align: right;
 }
 
 .card__type,
@@ -699,12 +709,19 @@ p {
 .card__details.button--dark,
 .card__like.button--light,
 .card__like.button--like,
-.card__caption.button--decorative {
+.card__rating-caption.button--decorative {
   min-width: 140px;
   padding: 8px 20px;
 }
 
-.card__caption {
+/* .card__details,
+.card__like,
+.card__rating-stars,
+.card__rating-caption {
+  align-self: center;
+} */
+
+.card__rating-caption {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
