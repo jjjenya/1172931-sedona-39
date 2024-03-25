@@ -23,7 +23,6 @@
   outline-offset: -1px;
 } */
 
-/* Почему body в высоту 904??? */
 /* flex-direction: row; - дефолтное значение, можно не прописывать */
 
 
@@ -44,18 +43,18 @@
   --icon--hover-focus: #756157;
   --icon--active: rgba(117, 97, 87, 30);
 
-  --disable: #E5E5E5;
+  --disable: #e5e5e5;
 
   --button-dark: #756157;
   --button-dark--hover-focus: #615048;
 
 
   --button-light: #82b3d3;
-  --button-light--hover-focus: #68A2CA;
+  --button-light--hover-focus: #68a2ca;
 
 
   --button-like: #7db54f;
-  --button-like--hover-focus: #6C9E42;
+  --button-like--hover-focus: #6c9e42;
 
 
   --button-decorative: #f2f2f2;
@@ -79,13 +78,13 @@
   --pagination-current: #f2f2f2;
 
   --pagination-disabled: #82b3d3;
-  --pagination-disabled--hover-focus: #68A2CA;
+  --pagination-disabled--hover-focus: #68a2ca;
 
   --font-family: "PT Sans", sans-serif;
-  --count-like: #7DB54F;
+  --count-like: #7db54f;
 
-  --social-icon: #83B3D3;
-  --social-icon--hover-focus: #68A2CA;
+  --social-icon: #83b3d3;
+  --social-icon--hover-focus: #68a2ca;
   --social-icon--disable: rgba(104, 162, 202, 30);
 }
 
@@ -119,16 +118,6 @@ img {
   object-fit: contain;
 }
 
-/* не проходит критерий CSS-02 -- нужно будет убирать точечно */
-/* h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
-} */
-
-/* почему  не работает bg-color: #ffffff для всей страницы */
 .page-container {
   margin: 0 auto;
   width: 1200px;
@@ -170,7 +159,7 @@ p {
 
 .site-nav__link {
   display: block;
-  padding: 8px;
+  padding: 20px 13px;
 }
 
 .site-nav__item {
@@ -189,13 +178,12 @@ p {
 .site-nav__link-current::after {
   position: absolute;
   height: 2px;
-  bottom: -10px;
-  left: 8px;
-  right: 8px;
+  bottom: -1px;
+  left: 13px;
+  right: 13px;
   background-color: var(--color-brown);
   content: "";
 }
-
 
 .nav-item,
 .socials-item {
@@ -238,12 +226,8 @@ p {
   fill: var(--social-icon--active)
 }
 
-
-
-
-/* -- старое: почему нельзя выровнять по вертикали с помощью vertical-align: middle */
 .section-intro {
-  padding: 69px 70px;
+  padding: 69px 70px 61px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -375,7 +359,7 @@ p {
 }
 
 .logo-link {
-  margin-right: 30px;
+  margin-right: 32px;
   align-self: flex-start;
 }
 
@@ -385,19 +369,20 @@ p {
   display: block;
 }
 
-.main-index {
+.main-container {
   margin-top: -6px;
 }
 
 .site-nav {
-  margin-left: 0;
+  /* margin-left: 5px; */
+  margin-bottom: 6px;
   max-width: 506px;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .user-nav {
@@ -407,11 +392,11 @@ p {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  /* gap: 8px; */
 }
 
 .user-nav-modal {
   min-width: 160px;
+  margin-top: -6px;
   margin-left: 20px;
   padding: 8px;
 }
@@ -421,6 +406,7 @@ p {
   min-width: 44px;
   min-height: 64px;
   position: relative;
+  margin-top: -6px;
 }
 
 .user-nav__link {
@@ -436,6 +422,28 @@ p {
   left: 0;
   margin: auto;
   fill: var(--color-black);
+}
+
+.user-nav__like {
+  position: relative;
+}
+
+.user-nav__like-count {
+position: absolute;
+content: "";
+font-size: 10px;
+line-height: 10px;
+font-weight: normal;
+color: var(--color-white);
+background-color: var(--count-like);
+border-radius: 10px;
+padding: 5px 4px;
+right: 3px;
+top: 11px;
+}
+
+.user-nav__link:hover {
+opacity: 0.5;
 }
 
 .hero {
@@ -464,10 +472,15 @@ p {
   flex-wrap: wrap;
 }
 
-.advantages__item--without-image,
+.advantages__item--without-image {
+  width: 400px;
+  padding: 113px 85px;
+  text-align: center;
+}
+
 .services__list .services__item {
   width: 400px;
-  padding: 85px;
+  padding: 186px 85px 81px;
   text-align: center;
 }
 
@@ -489,12 +502,56 @@ p {
 
 .advantage-title {
   margin: 0;
-  margin-bottom: 62px;
+  margin-bottom: 61px;
+  position: relative;
 }
 
+.advantage-title::after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 2px;
+  bottom: -30px;
+  left: 37%;
+}
+
+.advantages__item--with-image .advantage-title::after {
+  background-color: var(--color-white-30);
+}
+
+.advantages__item--without-image .advantage-title::after {
+  background-color: var(--color-black-30);
+}
+
+.advantages__item.advantages__item--without-image {
+  min-height: 385px;
+
+}
+
+
 .service-title {
+  position: relative;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+
+}
+
+.service-title::before {
+  position: absolute;
+  content: "";
+  width: 76px;
+  height: 76px;
+  bottom: 60px;
+  left: 34%;
+}
+.services__item:nth-child(1) .service-title::before {
+  background-image: url(../images/service--hotel.svg);
+}
+.services__item:nth-child(2) .service-title::before {
+  background-image: url(../images/service--eat.svg);
+}
+.services__item:nth-child(3) .service-title::before {
+  background-image: url(../images/service--souvenir.svg);
 }
 
 .advantages__item--with-image .advantage-title,
@@ -543,7 +600,7 @@ p {
 }
 
 .services-wrapper {
-  padding: 64px 70px;
+  padding: 63px 70px;
 }
 
 .services__item:nth-child(2n) {
@@ -584,6 +641,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--color-white);
+  padding-top: 54px;
 }
 
 .subscribe .section-intro__text {
@@ -645,7 +703,7 @@ p {
 
 .main-footer-wrapper {
   max-width: 1060px;
-  min-height: 120px;
+  min-height: 129px;
   margin: 0 auto;
   padding: 30px 0;
   display: flex;
@@ -674,9 +732,6 @@ p {
 .footer-logo-link:active .footer-logo-svg path {
   fill: var(--icon--active);
 }
-
-
-
 /* Index - END */
 
 
@@ -885,7 +940,6 @@ p {
 
 .catalog-cards {
   display: grid;
-  /* grid-template-columns: 340px 340px 340px; */
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
   margin-bottom: 40px;
@@ -979,7 +1033,6 @@ p {
   text-align: center;
 }
 
-/* как отцентрировать по вертикали?, кроме line-height */
 .pagination__link {
   font-size: 20px;
   line-height: 60px;
@@ -992,7 +1045,6 @@ p {
   font-size: 22px;
   line-height: 60px;
 }
-
 
 .pagination__link--current {
   font-weight: bold;
