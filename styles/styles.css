@@ -392,8 +392,6 @@ img {
   cursor: default;
 }
 
-
-
 .button--transparent {
   background-color: transparent;
 }
@@ -435,7 +433,6 @@ img {
 }
 
 .site-nav {
-  /* margin-left: 5px; */
   margin-bottom: 6px;
   max-width: 506px;
   display: flex;
@@ -586,15 +583,12 @@ img {
 
 .advantages__item.advantages__item--without-image {
   min-height: 385px;
-
 }
-
 
 .service-title {
   position: relative;
   margin: 0;
   margin-bottom: 28px;
-
 }
 
 .service-title::before {
@@ -729,7 +723,6 @@ img {
   margin-bottom: 8px;
 }
 
-/* почему тут не работает border-radius */
 .subscribe__form {
   min-width: 684px;
   margin: 0 auto;
@@ -748,7 +741,6 @@ img {
   padding: 14px 20px;
   background-color: var(--bgcolor-subscribe-field);
   border-radius: 4px 0 0 4px;
-
 }
 
 .subscribe__button {
@@ -791,8 +783,6 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-
-
 
 .main-footer__socials {
   display: flex;
@@ -971,7 +961,6 @@ img {
   background-image: url("../images/field--check.svg");
   background-repeat: no-repeat;
   background-position: 50%;
-
 }
 
 .control__mark {
@@ -985,7 +974,6 @@ img {
   border-radius: 4px;
   border: 3px solid #ffffff;
 }
-
 
 .control:hover .control__mark,
 .control:hover .control__label {
@@ -1023,8 +1011,6 @@ img {
   border-radius: 50%;
   content: "";
 }
-
-
 
 /* Стоимость */
 
@@ -1160,8 +1146,6 @@ img {
   text-transform: uppercase;
 }
 
-
-
 .catalog {
   max-width: 1060px;
   margin: 0 auto;
@@ -1284,7 +1268,6 @@ img {
   border-bottom: 1px solid var(--border-card);
   margin-bottom: 40px;
 }
-
 
 .card__item {
   box-shadow: 0 0 0 1px var(--border-card);
