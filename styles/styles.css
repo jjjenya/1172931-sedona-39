@@ -32,7 +32,9 @@
   --color-white: #ffffff;
   --color-white-30: rgba(255, 255, 255, 0.3);
   --color-black: #000000;
+  --color-black-40: rgba(0, 0, 0, 0.4);
   --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-25: rgba(0, 0, 0, 0.25);
   --color-brown: #756257;
 
   --text-second: #333333;
@@ -85,6 +87,11 @@
 
   --social-icon: #83b3d3;
   --social-icon--disable: rgba(104, 162, 202, 30);
+
+  --form-hover: #e6e6e6;
+  --form-outline: #83b3d3;
+  --filter-text: #a9a9a9;
+  --filter-radio: #3F5E72;
 }
 
 /* Var END */
@@ -247,6 +254,7 @@ img {
   color: var(--color-black);
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 2px;
 }
 
 .section-intro__title {
@@ -304,6 +312,7 @@ img {
 
 .button--dark {
   background-color: var(--button-dark);
+  text-align: center;
 }
 
 .button--dark:hover,
@@ -716,6 +725,10 @@ img {
   color: var(--text-second);
 }
 
+.subscribe--without-background {
+  margin-bottom: 8px;
+}
+
 /* почему тут не работает border-radius */
 .subscribe__form {
   min-width: 684px;
@@ -735,6 +748,7 @@ img {
   padding: 14px 20px;
   background-color: var(--bgcolor-subscribe-field);
   border-radius: 4px 0 0 4px;
+
 }
 
 .subscribe__button {
@@ -749,6 +763,17 @@ img {
   font-size: 18px;
   line-height: 24px;
   opacity: 0.6;
+}
+
+.subscribe__field:hover,
+.subscribe__field:focus-visible {
+  border-color: var(--form-hover);
+  opacity: 0.6;
+}
+
+.subscribe__field:focus-visible {
+  outline: 2px solid var(--form-outline);
+  outline-offset: -2px;
 }
 
 .subscribe__text {
@@ -766,6 +791,8 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+
+
 
 .main-footer__socials {
   display: flex;
@@ -797,9 +824,25 @@ img {
 
 /* Catalog */
 
+.field-number {
+  appearance: textfield;
+}
+
+/* Для Chrome и Safari */
+.field-number::-webkit-inner-spin-button,
+.field-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Для Firefox */
+.field-number {
+  -moz-appearance: textfield;
+}
+
 .inner__wrapper-header-filter {
   margin-bottom: 50px;
-  padding: 35px 70px;
+  padding: 35px 70px 73px;
   background-color: var(--spare-bgcolor-filter);
   background-image: url("../images/filter--background.jpg");
   background-repeat: no-repeat;
@@ -814,40 +857,8 @@ img {
   margin: 0 auto;
 }
 
-.catalog-select-wrapper {
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.filter-button-wrapper {
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-}
-
-.filter__button.button--light,
-.filter__button.button--transparent {
-  min-width: 191px;
-  padding: 8px 20px;
-}
-
-.filter__button.button-submit {
-  margin-bottom: 32px;
-}
-
-.filter-result {
-  margin: 0;
-}
-
-.filter-result--text {
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: bold;
-  text-transform: uppercase;
+.inner__header {
+  margin-bottom: 39px;
 }
 
 .inner__title {
@@ -868,7 +879,6 @@ img {
   line-height: 21px;
   color: inherit;
 }
-
 
 .breadcrumbs__svg {
   display: inline-block;
@@ -899,18 +909,258 @@ img {
   fill: var(--color-white-30);
 }
 
+/* Фильтры */
+
 .filter__form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+}
+
+.filter-group {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .filter-group__title {
   font-size: 20px;
   line-height: 26px;
   text-transform: capitalize;
+  margin-bottom: 31px;
+  padding: 0;
 }
+
+.filter-group--price {
+  margin-left: auto;
+  margin-right: 68px;
+}
+
+.filter-group__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.control__label {
+  font-family: inherit;
+  line-height: 23px;
+}
+
+/* Инфраструктура */
+
+.filter-group--infrastructure {
+  margin-right: 74px;
+}
+
+.control__input[type="checkbox"] ~ .control__mark {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: var(--color-white);
+}
+
+.control__input[type="checkbox"]:checked + .control__mark {
+  background-image: url("../images/field--check.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+}
+
+.control__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 3px solid #ffffff;
+}
+
+
+.control:hover .control__mark,
+.control:hover .control__label {
+  opacity: 0.6;
+}
+
+/* почему не работает на no-checked type="radio" */
+ .control__input:focus-visible + .control__mark {
+  outline: 3px solid var(--button-transparent);
+}
+
+.control:active .control__mark,
+.control:active .control__label {
+  opacity: 0.3;
+}
+
+
+.control__input:disabled + .control__mark {
+  opacity: 0.3;
+}
+
+/* Тип жилья */
+
+.control__input[type="radio"] + .control__mark {
+  border-radius: 50%;
+}
+
+.control__input[type="radio"]:checked + .control__mark::before {
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 10px;
+  height: 10px;
+  background-color: #3f5e72;
+  border-radius: 50%;
+  content: "";
+}
+
+
+
+/* Стоимость */
+
+.min-price--control,
+.max-price--control {
+  position: relative;
+  background-color: var(--main-bgcolor);
+  overflow: hidden;
+}
+
+.range-input {
+  padding: 12px 20px;
+  max-width: 143px;
+  min-height: 48px;
+  border: none;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+}
+
+.min-price--control {
+  border-radius: 4px 0 0 4px;
+}
+
+.max-price--control {
+  border-radius: 0 4px 4px 0;
+}
+
+.range-input:hover {
+  background-color: var(--form-hover);
+}
+
+/* ??? не работает */
+.filter-price label:focus-visible {
+  background-color: var(--form-hover);
+  outline: 3px solid var(--form-outline);
+}
+
+.filter-price {
+  margin-bottom: 43px;
+  display: flex;
+  gap: 2px;
+}
+
+.filter-price--text {
+  position: absolute;
+  content: "";
+  right: 20px;
+  top: 12px;
+  color: var(--filter-text);
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  background-color: var(--color-white-30);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: var(--color-white);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  content: "";
+}
+
+.range-toggle:hover {
+  box-shadow: 0 4px 10px 0 var(--color-black-25);
+}
+
+.range-toggle:focus-visible {
+  outline: 3px solid var(--button-transparent);
+  box-shadow: 0 4px 10px 0 var(--color-black-25);
+}
+
+.range-toggle:active {
+  outline: 2px solid var(--button-transparent);
+  box-shadow: 0 7px 15px 0 var(--color-black-40);
+}
+
+.range-toggle:disabled {
+  border: 2px solid var(--color-black);
+}
+
+.toggle-max {
+  right: 0;
+  top: -8px;
+}
+
+.toggle-min {
+  top: -8px;
+  left: 0;
+}
+
+/* Кнопки */
+
+.filter-button-wrapper {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__button.button--light,
+.filter__button.button--transparent {
+  min-width: 191px;
+  padding: 8px 20px;
+}
+
+.filter__button.button-submit {
+  margin-bottom: 32px;
+}
+
+/* Вывод результатов фильтра */
+
+.filter-result {
+  margin: 0;
+  max-width: 400px;
+}
+
+.filter-result--text {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
 
 .catalog {
   max-width: 1060px;
@@ -919,6 +1169,18 @@ img {
   flex-direction: column;
 }
 
+.catalog-select-wrapper {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 5px;
+}
 
 .switch {
   display: flex;
@@ -927,11 +1189,9 @@ img {
   width: 48px;
   height: 48px;
   background-color: var(--color-white);
-
   border: 2px solid var(--color-black);
   border-radius: 4px;
   padding: 17px 16px;
-
 }
 
 .switch svg {
@@ -961,16 +1221,11 @@ img {
   border: 2px solid var(--border-light);
 }
 
-.control-input {
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 23px;
-}
-
 .catalog__select {
-  width: 290px;
+  min-width: 290px;
+  max-width: 360px;
   height: 49px;
-  padding: 14px 20px;
+  padding: 14px 52px 14px 20px;
   box-sizing: border-box;
   border: none;
   outline: 2px solid var(--disable);
@@ -989,12 +1244,6 @@ img {
 }
 
 
-/* .catalog__select--arrow {
-  width: 12px;
-  height: 9px;
-} */
-
-/* как поменять цвет у стрелочки */
 .catalog__select:hover,
 .catalog__select:focus-visible {
   outline: 2px solid var(--button-light--hover-focus);
@@ -1016,7 +1265,10 @@ img {
 .catalog-switch {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 8px;
+  max-width: 160px;
+  min-width: 160px;
 }
 
 .catalog-switch__item {
@@ -1028,8 +1280,11 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-card);
   margin-bottom: 40px;
 }
+
 
 .card__item {
   box-shadow: 0 0 0 1px var(--border-card);
@@ -1062,7 +1317,7 @@ img {
 
 .card__title {
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1px;
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
@@ -1070,6 +1325,7 @@ img {
 
 .card__price {
   text-align: right;
+  white-space: nowrap;
 }
 
 .card__type,
@@ -1087,12 +1343,26 @@ img {
   padding: 8px 20px;
 }
 
-/* .card__details,
-.card__like,
-.card__rating-stars,
-.card__rating-caption {
+.card__rating-stars {
+  min-width: 18px;
+  height: 17px;
+  background-image: url(../images/cards--star.svg);
+  background-repeat: space;
   align-self: center;
-} */
+  justify-self: start;
+}
+
+.stars-4 {
+  width: 89px;
+}
+
+.stars-3 {
+  width: 66px;
+}
+
+.stars-2 {
+  width: 42px;
+}
 
 .card__rating-caption {
   font-size: 16px;
@@ -1100,6 +1370,7 @@ img {
   font-weight: 400;
   color: var(--text-second);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .pagination {
@@ -1108,6 +1379,7 @@ img {
   justify-content: start;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 50px;
 }
 
 .pagination__link,
@@ -1137,7 +1409,6 @@ img {
   color: var(--color-black);
   background-color: var(--pagination-current);
 }
-
 
 .pagination__link--disabled {
   color: var(--color-white);
