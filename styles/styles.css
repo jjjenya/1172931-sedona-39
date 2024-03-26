@@ -32,7 +32,9 @@
   --color-white: #ffffff;
   --color-white-30: rgba(255, 255, 255, 0.3);
   --color-black: #000000;
+  --color-black-40: rgba(0, 0, 0, 0.4);
   --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-25: rgba(0, 0, 0, 0.25);
   --color-brown: #756257;
 
   --text-second: #333333;
@@ -252,6 +254,7 @@ img {
   color: var(--color-black);
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 2px;
 }
 
 .section-intro__title {
@@ -309,6 +312,7 @@ img {
 
 .button--dark {
   background-color: var(--button-dark);
+  text-align: center;
 }
 
 .button--dark:hover,
@@ -721,6 +725,10 @@ img {
   color: var(--text-second);
 }
 
+.subscribe--without-background {
+  margin-bottom: 8px;
+}
+
 /* почему тут не работает border-radius */
 .subscribe__form {
   min-width: 684px;
@@ -740,6 +748,7 @@ img {
   padding: 14px 20px;
   background-color: var(--bgcolor-subscribe-field);
   border-radius: 4px 0 0 4px;
+
 }
 
 .subscribe__button {
@@ -782,6 +791,8 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+
+
 
 .main-footer__socials {
   display: flex;
@@ -831,7 +842,7 @@ img {
 
 .inner__wrapper-header-filter {
   margin-bottom: 50px;
-  padding: 35px 70px 70px;
+  padding: 35px 70px 73px;
   background-color: var(--spare-bgcolor-filter);
   background-image: url("../images/filter--background.jpg");
   background-repeat: no-repeat;
@@ -922,14 +933,8 @@ img {
 
 .filter-group--price {
   margin-left: auto;
-  margin-right: 70px;
+  margin-right: 68px;
 }
-
-.filter-group--accommodation {
-  margin-left: 70px;
-}
-
-/* Инфраструктура */
 
 .filter-group__item:not(:last-child) {
   margin-bottom: 16px;
@@ -939,6 +944,17 @@ img {
   position: relative;
   display: block;
   padding-left: 36px;
+}
+
+.control__label {
+  font-family: inherit;
+  line-height: 23px;
+}
+
+/* Инфраструктура */
+
+.filter-group--infrastructure {
+  margin-right: 74px;
 }
 
 .control__input[type="checkbox"] ~ .control__mark {
@@ -955,7 +971,7 @@ img {
   background-image: url("../images/field--check.svg");
   background-repeat: no-repeat;
   background-position: 50%;
-  outline: none;
+
 }
 
 .control__mark {
@@ -970,14 +986,37 @@ img {
   border: 3px solid #ffffff;
 }
 
+
+.control:hover .control__mark,
+.control:hover .control__label {
+  opacity: 0.6;
+}
+
+/* почему не работает на no-checked type="radio" */
+ .control__input:focus-visible + .control__mark {
+  outline: 3px solid var(--button-transparent);
+}
+
+.control:active .control__mark,
+.control:active .control__label {
+  opacity: 0.3;
+}
+
+
+.control__input:disabled + .control__mark {
+  opacity: 0.3;
+}
+
+/* Тип жилья */
+
 .control__input[type="radio"] + .control__mark {
   border-radius: 50%;
 }
 
 .control__input[type="radio"]:checked + .control__mark::before {
   position: absolute;
-  top: 17%;
-  left: 15%;
+  top: 2.5px;
+  left: 2.5px;
   width: 10px;
   height: 10px;
   background-color: #3f5e72;
@@ -985,24 +1024,15 @@ img {
   content: "";
 }
 
-.control:hover .control__mark {
-  outline: 2px red solid;
-}
 
-.control__input:disabled + .control__mark {
-  outline: 2px green solid;
-}
-
-.control__label {
-  font-family: inherit;
-  line-height: 23px;
-}
 
 /* Стоимость */
 
 .min-price--control,
 .max-price--control {
   position: relative;
+  background-color: var(--main-bgcolor);
+  overflow: hidden;
 }
 
 .range-input {
@@ -1015,12 +1045,22 @@ img {
   font-weight: bold;
 }
 
-.min-price--input {
+.min-price--control {
   border-radius: 4px 0 0 4px;
 }
 
-.max-price--input {
+.max-price--control {
   border-radius: 0 4px 4px 0;
+}
+
+.range-input:hover {
+  background-color: var(--form-hover);
+}
+
+/* ??? не работает */
+.filter-price label:focus-visible {
+  background-color: var(--form-hover);
+  outline: 3px solid var(--form-outline);
 }
 
 .filter-price {
@@ -1058,6 +1098,24 @@ img {
   border-radius: 5px;
   cursor: pointer;
   content: "";
+}
+
+.range-toggle:hover {
+  box-shadow: 0 4px 10px 0 var(--color-black-25);
+}
+
+.range-toggle:focus-visible {
+  outline: 3px solid var(--button-transparent);
+  box-shadow: 0 4px 10px 0 var(--color-black-25);
+}
+
+.range-toggle:active {
+  outline: 2px solid var(--button-transparent);
+  box-shadow: 0 7px 15px 0 var(--color-black-40);
+}
+
+.range-toggle:disabled {
+  border: 2px solid var(--color-black);
 }
 
 .toggle-max {
@@ -1222,8 +1280,11 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-card);
   margin-bottom: 40px;
 }
+
 
 .card__item {
   box-shadow: 0 0 0 1px var(--border-card);
@@ -1256,7 +1317,7 @@ img {
 
 .card__title {
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1px;
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
@@ -1264,6 +1325,7 @@ img {
 
 .card__price {
   text-align: right;
+  white-space: nowrap;
 }
 
 .card__type,
@@ -1281,12 +1343,34 @@ img {
   padding: 8px 20px;
 }
 
+.card__rating-stars {
+  min-width: 18px;
+  height: 17px;
+  background-image: url(../images/cards--star.svg);
+  background-repeat: space;
+  align-self: center;
+  justify-self: start;
+}
+
+.stars-4 {
+  width: 89px;
+}
+
+.stars-3 {
+  width: 66px;
+}
+
+.stars-2 {
+  width: 42px;
+}
+
 .card__rating-caption {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   color: var(--text-second);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .pagination {
@@ -1295,6 +1379,7 @@ img {
   justify-content: start;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 50px;
 }
 
 .pagination__link,
